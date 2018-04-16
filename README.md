@@ -7,6 +7,7 @@ Added: Data Scrapping Script, to scrap data from  https://eur-lex.europa.eu/brow
 
 Note: Please make sure scrapping.py and links.txt are in the same folder
 
+Running Time: 2hrs(approx.)
 
 TODO: 
 * Add support for windows
