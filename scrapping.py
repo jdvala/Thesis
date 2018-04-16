@@ -205,7 +205,7 @@ for index, links in enumerate(lines):
 
 
 # Storing the 'store_list_success' and 'store_list_failure' into text file
-
+homedir = os.environ['HOME']
 with open(homedir+"/"+"Data/"+"success.txt","a") as fileStore:
     fileStore.write("\n".join(store_list_success))
 
