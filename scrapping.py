@@ -228,6 +228,8 @@ for index, links in enumerate(lines):
 
 
 # In[ ]:
+homedir = os.environ['HOME']
+dir_to_save = homedir+"/"+"Data_"+lang+"/"+topic+"/"+subtopic
 
 
 # Storing the 'store_list_success' and 'store_list_failure' into text file
