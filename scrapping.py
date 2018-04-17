@@ -229,15 +229,15 @@ for index, links in enumerate(lines):
 
 # In[ ]:
 homedir = os.environ['HOME']
-dir_to_save = homedir+"/"+"Data_"+lang+"/"+topic+"/"+subtopic
+dir_to_save = homedir+"/"+"Data_"+lang
 
 
 # Storing the 'store_list_success' and 'store_list_failure' into text file
 homedir = os.environ['HOME']
-with open(dir_to_save+"success.txt","a") as fileStore:
+with open(dir_to_save+"/success.txt","a") as fileStore:
     fileStore.write("\n".join(store_list_success))
 
-with open(dir_to_save+"failure.txt","a") as file_Store:
+with open(dir_to_save+"/failure.txt","a") as file_Store:
     file_Store.write("\n".join(store_list_failure))
     
 
