@@ -8,6 +8,8 @@ Added: Data Scrapping Script, to scrap data from https://eur-lex.europa.eu/brows
 
 Note: Please make sure scrapping.py and links.txt are in the same folder
 
+Updated: Support for four languages(English, German, French, Spanish)
+
 Running Time: 2hrs(approx.)
 
 TODO: 
