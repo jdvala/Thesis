@@ -143,9 +143,9 @@ def extraction(hyper_links, language):
     except:
         os.makedirs(dir_to_save)
         
-    #log_file = open(dir_to_save+"/"+'log'+'.txt',"w")  #logging all the outputs to log file
+    log_file = open(dir_to_save+"/"+'log'+'.txt',"w")  #logging all the outputs to log file
     
-    #sys.stdout = log_file # Telling system to write all the print statements to log file
+    sys.stdout = log_file # Telling system to write all the print statements to log file
     
     for i, link in enumerate(hyper_links):
         print("URL for Extraction is: {}".format(link))
