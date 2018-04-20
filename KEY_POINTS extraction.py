@@ -167,7 +167,10 @@ for root, dirs, files in os.walk(path):
                         Failure_KEY_POINT.set_value(_index_success, 'Path', path)
                 
                 
-                
+# Saving statistics to csv file at 'path'
+
+success.to_csv(path)  # success dataframe to csv
+failure.to_csv(path)  # failure dataframe to csv                
           
     
 
