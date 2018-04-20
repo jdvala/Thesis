@@ -1,8 +1,8 @@
-https://eur-lex.europa.eu/summary/chapter/agriculture/0301.html?root=0301
-https://eur-lex.europa.eu/summary/chapter/agriculture/0302.html?root=0302
-https://eur-lex.europa.eu/summary/chapter/agriculture/0303.html?root=0303
-https://eur-lex.europa.eu/summary/chapter/agriculture/0304.html?root=0304
-https://eur-lex.europa.eu/summary/chapter/agriculture/03099.html?root=0399
+https://eur-lex.europa.eu/summary/chapter/agriculture/0301.html?root=0301&obsolete=true
+https://eur-lex.europa.eu/summary/chapter/agriculture/0302.html?root=0302&obsolete=true
+https://eur-lex.europa.eu/summary/chapter/agriculture/0303.html?root=0303&obsolete=true
+https://eur-lex.europa.eu/summary/chapter/agriculture/0304.html?root=0304&obsolete=true
+https://eur-lex.europa.eu/summary/chapter/agriculture/03099.html?root=0399&obsolete=true
 https://eur-lex.europa.eu/summary/chapter/audiovisual_and_media/0501.html?root=0501&obsolete=true
 https://eur-lex.europa.eu/summary/chapter/audiovisual_and_media/0502.html?root=0502&obsolete=true
 https://eur-lex.europa.eu/summary/chapter/audiovisual_and_media/0503.html?root=0503&obsolete=true
