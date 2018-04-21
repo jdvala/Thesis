@@ -45,6 +45,19 @@ elif download == 4:
 
 
 ###############################################################################################################
+
+w_wo_html = input(input("Do you want data with HTML tags? (Default: Without HTML tags) [y/n]  "))
+if w_wo_html == 'Y' or w_wo_html == 'y':
+    html_ = 1
+elif w_wo_html == 'N' or w_wo_html == 'n':
+    html_ = 0
+else:
+    html_ = 0
+
+
+
+
+
 def topic_and_subtopic(list_links):
     """Returns the Topic and Subtopic by HTML Parsing"""
     topic = []
@@ -118,7 +131,7 @@ def link_creation(list_links, language):
 store_list_success = []     # List to store all the links that were successfully extracted\
 store_list_failure = []     # List to store all the links that were not successfully extracted\
 
-def extraction(hyper_links, language):
+def extraction(hyper_links, language, option):
     
     """Saves text in its native form from webpages
        Returns information regarding files """
@@ -153,8 +166,10 @@ def extraction(hyper_links, language):
             htp = urllib.request.urlopen(link)
             print("Waiting for response from webpage:{}".format(link))
             
+
             soup = BeautifulSoup(htp, from_encoding=resp.info().get_param('charset'))
-            
+        
+
             # kill all script and style elements
             for script in soup(["script", "style"]):
                 script.extract()    
@@ -172,6 +187,13 @@ def extraction(hyper_links, language):
             # Get the first line of text, that is the title of the summary
             title = text.split('\n', 1)[0]
     
+
+            # User option
+            if option == 1:
+                text == soup
+            else:
+                text = text
+
                     
             print("Saving Text to the file: {}.txt".format(dir_to_save+"/"+title))
         

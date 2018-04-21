@@ -37,7 +37,7 @@ def start_index(text_list):
     """
     indice = 0 
     
-    for index, sentence in enumerate(file_content):
+    for index, sentence in enumerate(text_list):
         if re.match(r"KEY POINTS\n", sentence) is not None:
             indice = index
         else:
@@ -62,7 +62,7 @@ def end_index(text_list):
     """
     indice = 0
     
-    for index, sentence in enumerate(file_content):
+    for index, sentence in enumerate(text_list):
         if re.match(r"SINCE WHEN DOES THE DIRECTIVE APPLY\?\n", sentence) is not None:
             indice = index
         elif re.match(r"FROM WHEN DOES THE REGULATION APPLY\?\n", sentence) is not None:
@@ -169,8 +169,8 @@ for root, dirs, files in os.walk(path):
                 
 # Saving statistics to csv file at 'path'
 
-success.to_csv(path)  # success dataframe to csv
-failure.to_csv(path)  # failure dataframe to csv                
+Success.to_csv(path)  # success dataframe to csv
+Failure.to_csv(path)  # failure dataframe to csv                
           
     
 
