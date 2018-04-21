@@ -190,7 +190,7 @@ def extraction(hyper_links, language, option):
 
             # User option
             if option == 1:
-                text == soup
+                text = soup
             else:
                 text = text
 
