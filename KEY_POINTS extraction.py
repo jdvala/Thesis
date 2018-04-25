@@ -38,7 +38,7 @@ def start_index(text_list):
     indice = 0 
     
     for index, sentence in enumerate(text_list):
-        if re.match(r"KEY POINTS\n", sentence) is not None:
+        if re.match(r"SUMMARY\n", sentence, flags=re.I) is not None:
             indice = index
         else:
             # If we are unable to retrive the index of 'KEY POINTS' in the document,
@@ -49,7 +49,25 @@ def start_index(text_list):
     return indice
 
 
-# In[36]:
+def makeSure(text_list):
+    """Returns strating index of Key Points
+    Args: List of Text
+    
+    Returns: Integer - Index 
+    """
+    
+    index_1 = index_2 = index_3 = len(text_list)
+    
+    
+    for linenum, line in enumerate(file):
+        if re.match(r"References\n", line, flags=re.I) != None:
+            index_1 = linenum
+        elif re.match(r"See also\n", line, flags=re.I) != None:
+            index_2 = linenum
+        else:
+            index_3 = index_3
+                   
+    return min(index_1, index_2, index_3)
 
 
 # Ending index
@@ -63,14 +81,17 @@ def end_index(text_list):
     indice = 0
     
     for index, sentence in enumerate(text_list):
-        if re.match(r"SINCE WHEN DOES THE DIRECTIVE APPLY\?\n", sentence) is not None:
+        if re.match(r"WHEN.*APPLY\?\n",sentence, flags=re.I) != None:
             indice = index
-        elif re.match(r"FROM WHEN DOES THE REGULATION APPLY\?\n", sentence) is not None:
+        elif re.match(r"WHEN.*IMPLEMENTED\?\n", sentence, flags=re.I) != None:
+            indice = index
+        elif re.match(r"WHEN.*FORCE\?\n", sentence, flags=re.I) != None:
+            indice = index
+        elif re.match(r"RELATED.*", sentence, flags=re.I) != None:
+            indice = index
+        elif re.match(r"DATE.*FORCE", sentence, flags=re.I) != None:
             indice = index
         else:
-            # If we are unable to retrive the index of 'KEY POINTS' in the document,
-            # we will return '0' as starting index so it will be easy for us to determine,
-            # how many documents we are unable to extract 'KEY POINTS' from. 
             indice = index
             
     return indice
@@ -126,10 +147,18 @@ for root, dirs, files in os.walk(path):
                     
                     if s_index != 0 and e_index != 0:
                         keypoints = []
+                        keypoints_1 = []
                     
                         for index, sentence in enumerate(fileContent[s_index+1:e_index-1]):
                             keypoints.append(sentence)
-                            
+
+
+                        # Making sure we dont have extras references and other things at the end of the file
+                        
+                        index_ = makeSure(keypoints)
+
+                        for index, sentence in enumerate(keypoints[:index_]):
+                            keypoints_1.append(sentence)
                             
                         # Writing Key Points to Files at '/home/jay/Thesis/Data_key_points/' 
                         
@@ -143,7 +172,7 @@ for root, dirs, files in os.walk(path):
                         print("Saving file at: {}".format(path_to_write))
                         
                         with open(path_to_write+'/'+file, "w") as file_to_write:
-                            file_to_write.writelines(keypoints)
+                            file_to_write.writelines(keypoints_1)
                             
                         
                         # Writing file name, path, topic and subtopic to file 'Success_KEY_POINT dataframe'
@@ -169,8 +198,8 @@ for root, dirs, files in os.walk(path):
                 
 # Saving statistics to csv file at 'path'
 
-Success.to_csv(path)  # success dataframe to csv
-Failure.to_csv(path)  # failure dataframe to csv                
+Success_KEY_POINT.to_csv(path)  # success dataframe to csv
+Failure_KEY_POINT.to_csv(path)  # failure dataframe to csv                
           
     
 
