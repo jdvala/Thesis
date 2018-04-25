@@ -25,9 +25,6 @@ import sys
 import pandas as pd
 
 
-# In[35]:
-
-
 # Starting index
 def start_index(text_list):
     """Returns strating index of Key Points
@@ -73,28 +70,28 @@ def makeSure(text_list):
 # Ending index
 def end_index(text_list):
     """Retruns the index where we find 'SINCE WHEN DOES THE DIRECTIVE APPLY?' or 
-    'FROM WHEN DOES THE REGULATION APPLY\?'
+    'FROM WHEN DOES THE REGULATION APPLY?'
     Args: List of Text
     
     Returns: Integer - Index
     """
-    indice = 0
-    
+    i_1 = i_2 = i_3 = i_4 = i_5 = i_6 = len(text_list)
+
     for index, sentence in enumerate(text_list):
         if re.match(r"WHEN.*APPLY\?\n",sentence, flags=re.I) != None:
-            indice = index
+            i_1 = index
         elif re.match(r"WHEN.*IMPLEMENTED\?\n", sentence, flags=re.I) != None:
-            indice = index
+            i_2 = index
         elif re.match(r"WHEN.*FORCE\?\n", sentence, flags=re.I) != None:
-            indice = index
+            i_3 = index
         elif re.match(r"RELATED.*", sentence, flags=re.I) != None:
-            indice = index
+            i_4 = index
         elif re.match(r"DATE.*FORCE", sentence, flags=re.I) != None:
-            indice = index
+            i_5 = index
         else:
-            indice = index
+            i_6 = index
             
-    return indice
+    return min(i_1, i_2, i_3, i_4, i_5, i_6 )
 
 
 # In[37]:
