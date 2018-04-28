@@ -81,4 +81,4 @@ wget https://az764295.vo.msecnd.net/stable/3aeede733d9a3098f7b4bdc1f66b63b0f48c1
 
 sudo dpkg -i code_1.22.2-1523551015_amd64.deb
 
-echo "SETUP COMPLETE.
+echo "SETUP COMPLETE."
