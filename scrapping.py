@@ -241,7 +241,7 @@ for index, links in enumerate(lines):
     print("Strating the extraction process...")
     
     #for index, links_2_extract in enumerate(extraction_links):
-    extraction(extraction_links,lang, w_wo_html)
+    extraction(extraction_links,lang, html_)
     
     print("Extraction Process completed.")
     
