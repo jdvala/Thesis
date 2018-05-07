@@ -190,15 +190,16 @@ def extraction(hyper_links, language, option):
 
             # User option
             if option == 1:
-                text = soup
+                text = str(soup)
+                print("Saving Text to the file: {}.html".format(dir_to_save+"/"+title))
+                with open(dir_to_save+"/"+title+'.html', "w") as text_file:
+                    text_file.write(text)
             else:
                 text = text
-
-                    
-            print("Saving Text to the file: {}.txt".format(dir_to_save+"/"+title))
+                print("Saving Text to the file: {}.txt".format(dir_to_save+"/"+title))
         
-            with open(dir_to_save+"/"+title+'.txt', "w") as text_file:
-                text_file.write(text)
+                with open(dir_to_save+"/"+title+'.txt', "w") as text_file:
+                    text_file.write(text)
                 
             # As the file is written successfully, we will store this like to successfull list
             
@@ -262,4 +263,3 @@ with open(dir_to_save+"/success.txt","a") as fileStore:
 with open(dir_to_save+"/failure.txt","a") as file_Store:
     file_Store.write("\n".join(store_list_failure))
     
-
