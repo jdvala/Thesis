@@ -46,7 +46,7 @@ elif download == 4:
 
 ###############################################################################################################
 
-w_wo_html = input(input("Do you want data with HTML tags? (Default: Without HTML tags) [y/n]  "))
+w_wo_html = str(input("Do you want data with HTML tags? (Default: Without HTML tags) [y/n]  "))
 if w_wo_html == 'Y' or w_wo_html == 'y':
     html_ = 1
 elif w_wo_html == 'N' or w_wo_html == 'n':
@@ -156,9 +156,9 @@ def extraction(hyper_links, language, option):
     except:
         os.makedirs(dir_to_save)
         
-    log_file = open(dir_to_save+"/"+'log'+'.txt',"w")  #logging all the outputs to log file
+    #log_file = open(dir_to_save+"/"+'log'+'.txt',"w")  #logging all the outputs to log file
     
-    sys.stdout = log_file # Telling system to write all the print statements to log file
+    #sys.stdout = log_file # Telling system to write all the print statements to log file
     
     for i, link in enumerate(hyper_links):
         print("URL for Extraction is: {}".format(link))
