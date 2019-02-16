@@ -17,7 +17,7 @@ de_data = content.split('\n\n\n')[1]
 
 
 
-File Descriptions:
+#### File Descriptions:
 
 `Paralel_Scrapper.py`: Contains code for scrapping the data from Eurlex website.
 
