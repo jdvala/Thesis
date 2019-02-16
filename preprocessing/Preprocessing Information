@@ -1,5 +1,0 @@
-# Preprocessing steps 
-
-1 remove dates (except for word dates that are in form 31 December 2018)
-2 convert numerical % to words
-3 convert other numbers to their word form.
