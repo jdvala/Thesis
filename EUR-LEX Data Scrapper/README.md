@@ -11,8 +11,14 @@ with open(file_path, 'r') as readfilehandle:
   content = readfilehandle.read()
 
 # and then split the content.
-
 en_data = content.split('\n\n\n')[0]
 de_data = content.split('\n\n\n')[1]
-
 ```
+
+
+
+File Descriptions:
+
+`Paralel_Scrapper.py`: Contains code for scrapping the data from Eurlex website.
+
+`links.txt`: Curated list of links that is needed for `Parallel_Scrapper.py` to work.
