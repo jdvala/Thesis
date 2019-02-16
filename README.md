@@ -6,4 +6,7 @@ The title of the thesis is *"Classification of multilingual legal text using dee
 
 ## Contents:
 
-
+1) EUR-LEX Scrapper:
+Write about it
+2) Preprocessing:
+Write about it too.
